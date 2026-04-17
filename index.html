@@ -34,103 +34,105 @@
             pointer-events: none;
         }
 
-        /* واجهة البداية */
+        /* تطبيق قياسات الرفع الدقيقة */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center; position: relative; z-index: 10;
+            margin-top: -60px; /* سحب المحتوى للأعلى كما طلبت */
         }
         
         .main-logo {
-            width: 240px; margin-bottom: 25px;
+            width: 210px; margin-bottom: 10px; 
             filter: drop-shadow(0 0 30px rgba(0,0,0,0.5));
             animation: heroReveal 1.5s ease-out;
         }
 
         .hero h1 {
-            font-family: 'Amiri', serif; font-size: clamp(2.5rem, 8vw, 3.8rem);
+            font-family: 'Amiri', serif; font-size: clamp(2.3rem, 7vw, 3.5rem);
             background: linear-gradient(to bottom, #fff 40%, var(--gold));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 5px; animation: fadeUp 1s forwards;
+            margin-bottom: 2px; animation: fadeUp 1s forwards;
         }
 
         .heritage-tag {
-            color: var(--gold); font-size: 0.8rem; letter-spacing: 6px; 
-            font-weight: 100; margin-bottom: 30px; border-top: 1px solid rgba(197, 168, 128, 0.3);
-            padding-top: 10px; animation: fadeUp 1s forwards 0.5s; opacity: 0;
+            color: var(--gold); font-size: 0.75rem; letter-spacing: 5px; 
+            font-weight: 100; margin-bottom: 15px; border-top: 1px solid rgba(197, 168, 128, 0.2);
+            padding-top: 5px; animation: fadeUp 1s forwards 0.5s; opacity: 0;
         }
 
-        /* توضيح التمرير الذكي */
         .scroll-invitation {
             position: absolute; bottom: 40px; display: flex; flex-direction: column;
-            align-items: center; gap: 15px; opacity: 0; animation: fadeIn 1s forwards 1.2s;
+            align-items: center; gap: 8px; opacity: 0; animation: fadeIn 1s forwards 1.2s;
         }
-        .scroll-invitation span { font-size: 0.65rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
-        .indicator-line { width: 1px; height: 50px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
+        .scroll-invitation span { font-size: 0.6rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+        .indicator-line { width: 1px; height: 35px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
         .indicator-line::after {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 30%;
             background: var(--gold); animation: lineFlow 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* قسم الإرث القانوني - لمسة إبداعية */
+        /* قياسات قسم الإرث المدمجة */
         .legacy-section {
-            padding: 80px 20px; text-align: center; z-index: 10; position: relative;
+            padding: 20px 20px 40px; 
+            text-align: center; z-index: 10; position: relative;
         }
         .legacy-box {
             background: linear-gradient(145deg, rgba(255,255,255,0.05), transparent);
             border: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 40px 25px; border-radius: 20px; backdrop-filter: blur(10px);
+            padding: 30px 20px; border-radius: 20px; backdrop-filter: blur(10px);
             max-width: 600px; margin: 0 auto;
             opacity: 0; transform: scale(0.95); transition: var(--transition);
         }
         .legacy-box.active { opacity: 1; transform: scale(1); }
-        .legacy-box h2 { font-family: 'Amiri', serif; color: var(--gold); font-size: 2rem; margin-bottom: 15px; }
+        .legacy-box h2 { font-family: 'Amiri', serif; color: var(--gold); font-size: 1.8rem; margin-bottom: 10px; }
         .legacy-box p { font-weight: 200; font-size: 1rem; color: #ddd; font-style: italic; }
 
-        /* شبكة الخدمات */
+        /* قياسات شبكة الخدمات المرفوعة */
         .content-grid {
-            padding: 40px 20px 100px; position: relative; z-index: 10;
-            display: grid; gap: 20px;
+            padding: 10px 20px 60px;
+            position: relative; z-index: 10;
+            display: grid; gap: 15px;
         }
 
         .glass-card {
             background: var(--white-glass);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-right: 3px solid var(--gold);
-            padding: 30px; border-radius: 12px;
-            opacity: 0; transform: translateY(30px);
+            padding: 22px; border-radius: 12px;
+            opacity: 0; transform: translateY(20px);
             transition: var(--transition);
         }
 
         .glass-card.active { opacity: 1; transform: translateY(0); }
-        .glass-card h3 { font-family: 'Amiri', serif; font-size: 1.7rem; color: var(--gold); margin-bottom: 12px; }
+        .glass-card h3 { font-family: 'Amiri', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 8px; }
 
-        /* لوحة التواصل النهائية */
+        /* قياسات لوحة التواصل */
         .contact-monolith {
             background: rgba(10, 26, 29, 0.98);
-            padding: 100px 30px; border-top: 1px solid var(--gold);
+            padding: 60px 30px; border-top: 1px solid var(--gold);
             text-align: center; position: relative; z-index: 10;
         }
 
         .mail-btn {
-            display: inline-block; padding: 10px 25px; border: 1px solid var(--gold);
+            display: inline-block; padding: 8px 20px; border: 1px solid var(--gold);
             border-radius: 50px; color: var(--gold); text-decoration: none;
-            font-size: 0.9rem; margin-bottom: 40px; transition: 0.3s;
+            font-size: 0.85rem; margin-bottom: 25px; transition: 0.3s;
         }
         .mail-btn:hover { background: var(--gold); color: #000; }
 
         .phone-link {
-            display: block; font-size: 1.8rem; color: #fff; text-decoration: none;
-            margin: 10px 0; font-weight: 700; direction: ltr;
+            display: block; font-size: 1.7rem; color: #fff; text-decoration: none;
+            margin: 5px 0; font-weight: 700; direction: ltr;
         }
 
         .floating-actions {
-            position: fixed; bottom: 30px; right: 20px; left: 20px;
+            position: fixed; bottom: 20px; right: 20px; left: 20px;
             display: flex; gap: 10px; z-index: 100;
         }
         .f-btn {
-            flex: 1; padding: 18px; border-radius: 50px; border: none;
-            font-weight: 700; font-size: 0.9rem; text-decoration: none;
+            flex: 1; padding: 15px; border-radius: 50px; border: none;
+            font-weight: 700; font-size: 0.85rem; text-decoration: none;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -139,13 +141,14 @@
 
         /* الأنيميشن */
         @keyframes lineFlow { 0% { top: -30%; } 100% { top: 110%; } }
-        @keyframes heroReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2.5rem; }
-            .main-logo { width: 180px; }
+            .hero { margin-top: -80px; } /* رفع إضافي للهواتف لضمان الرؤية */
+            .hero h1 { font-size: 2.2rem; }
+            .main-logo { width: 160px; }
         }
     </style>
 </head>
@@ -160,7 +163,7 @@
         <p class="heritage-tag">للخدمات والاستشارات القانونية</p>
         
         <div class="scroll-invitation">
-            <span>اكتشف خدماتنا</span>
+            <span>اكتشف الإرث</span>
             <div class="indicator-line"></div>
         </div>
     </section>
@@ -175,7 +178,7 @@
     <main class="content-grid">
         <div class="glass-card scroll-reveal">
             <h3>القانون المدني</h3>
-            <p>نزاعات العقارات، هندسة العقود الاستراتيجية، واسترداد الحقوق المالية بأعلى معايير الدقة الميدانية في بغداد.</p>
+            <p>نزاعات العقارات، هندسة العقود الاستراتيجية، واسترداد الحقوق المالية بأعلى معايير الدقة.</p>
         </div>
 
         <div class="glass-card scroll-reveal">
@@ -185,21 +188,21 @@
 
         <div class="glass-card scroll-reveal">
             <h3>قانون الشركات</h3>
-            <p>تأسيس الكيانات الاستثمارية، تسجيل الشركات، وتصفية المنازعات الضريبية والتمثيل الرسمي أمام الدوائر المختصة.</p>
+            <p>تأسيس الكيانات الاستثمارية، تسجيل الشركات، والتمثيل الرسمي أمام الدوائر المختصة.</p>
         </div>
 
         <div class="glass-card scroll-reveal">
             <h3>الجنايات والنزاهة</h3>
-            <p>دفاع صلب في قضايا النزاهة والجرائم المالية، مع تقديم استراتيجيات دفاع استباقية تحمي مستقبل موكلينا.</p>
+            <p>دفاع صلب في قضايا النزاهة والجرائم المالية لحماية مستقبل موكلينا.</p>
         </div>
     </main>
 
     <section class="contact-monolith">
         <a href="mailto:mustafanaseer5@yahoo.com" class="mail-btn">mustafanaseer5@yahoo.com</a>
-        <h2 style="font-family: 'Amiri'; color: var(--gold); font-size: 1.8rem; margin-bottom: 20px;">تواصل معي</h2>
+        <h2 style="font-family: 'Amiri'; color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">تواصل معي</h2>
         <a href="tel:07835535399" class="phone-link">0783 553 5399</a>
         <a href="tel:07726260096" class="phone-link">0772 626 0096</a>
-        <p style="margin-top: 40px; font-weight: 100; opacity: 0.5; font-size: 0.8rem;">بغداد، المنصور، تقاطع الأميرات<br>4:00 عصراً — 9:00 مساءً</p>
+        <p style="margin-top: 20px; font-weight: 100; opacity: 0.5; font-size: 0.75rem;">بغداد، المنصور، تقاطع الأميرات<br>4:00 عصراً — 9:00 مساءً</p>
     </section>
 
     <div class="floating-actions">
@@ -207,8 +210,8 @@
         <a href="https://wa.me/9647835535399" class="f-btn btn-wa">واتساب</a>
     </div>
 
-    <footer style="text-align: center; padding: 40px 20px 140px; font-size: 0.7rem; opacity: 0.3;">
-        © 2026 مكتب المحامي مصطفى ناصر الدين. للخدمات والاستشارات القانونية.
+    <footer style="text-align: center; padding: 30px 20px 120px; font-size: 0.7rem; opacity: 0.3;">
+        © 2026 مكتب المحامي مصطفى ناصر الدين. جميع الحقوق محفوظة.
     </footer>
 
     <script>
@@ -216,7 +219,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
